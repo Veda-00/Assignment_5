@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>assign-5</title>
+        <style>
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+        th{
+            background-color:lightseagreen;
+            color:white
+        }
+
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #D6EEEE;
+        }
+
+        .ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333333;
+        }
+        .uh {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:lightblue;
+        }
+        .li {
+        float: left;
+        }
+        .lh{
+        float:none;
+        }
+        .li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+        }
+        .lh a {
+        display: block;
+        color: blue;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+        }
+
+        .li a:hover {
+        background-color: #111111;
+        }
+
+        .lh a:hover{
+        background-color:yellow;
+        }
+
+        
+        /* Styling for the main container box */
+        .menu-container {
+            max-width: 400px; /* Maximum width of the box */
+            width: 90%; /* Make it responsive */
+            background-color: #ffffff; /* White background for the box */
+            padding: 20px; /* Padding inside the box */
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Styling for the heading */
+        .menu-title {
+            font-size: 24px; /* Large font size for the title */
+            font-weight: bold; /* Bold text */
+            color: #333333; /* Dark grey text color */
+            margin-bottom: 15px; /* Space below the title */
+            text-align: center; /* Center the title text */
+        }
+
+        /* Styling for the unordered list */
+        .menu-list {
+            list-style: none; /* Remove default bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Styling for each list item */
+        .menu-item {
+            display: flex; /* Use flexbox to align icon and text */
+            align-items: center; /* Vertically align items */
+            color: #555555; /* Medium grey text color */
+            font-size: 18px; /* Font size for menu items */
+            margin-bottom: 10px; /* Space between list items */
+        }
+
+        /* Styling for the star icon */
+        .star-icon {
+            color: #ef4444; /* Red color for the star */
+            margin-right: 8px; /* Space between star and text */
+            font-size: 1.2em; /* Slightly larger star */
+        }
+        /* Styling for the main container box */
+        .news-container {
+            max-width: 900px; /* Maximum width of the box */
+            width: 95%; /* Make it responsive */
+            margin: 0 auto; /* Center the box horizontally */
+            background-color: #ffffff; /* White background for the box */
+            padding: 20px; /* Padding inside the box */
+            border-radius: 8px; /* Slightly rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Styling for the green demo image banner */
+        .demo-banner {
+            background-color: #4ade80; /* Green background */
+            color: #ffffff; /* White text color */
+            text-align: center; /* Center the text */
+            padding: 30px; /* Padding inside the banner */
+            border-radius: 6px; /* Rounded corners */
+            margin-bottom: 25px; /* Space below the banner */
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow */
+        }
+
+        /* Styling for the banner text */
+        .banner-text {
+            font-size: 20px; /* Font size for banner text */
+            font-weight: bold; /* Bold text */
+        }
+
+        /* Styling for the main news heading */
+        .news-heading {
+            font-size: 32px; /* Large font size for heading */
+            font-weight: bold; /* Bold text */
+            color: #1a202c; /* Dark text color */
+            margin-bottom: 15px; /* Space below heading */
+        }
+
+        /* Styling for paragraphs */
+        .news-paragraph {
+            color: #4a5568; /* Medium grey text color */
+            line-height: 1.6; /* Comfortable line spacing */
+            margin-bottom: 15px; /* Space between paragraphs */
+        }
+
+        /* Adjust margin for the last paragraph before destinations */
+        .news-paragraph:last-of-type {
+            margin-bottom: 25px;
+        }
+
+        /* Styling for the destinations heading */
+        .destinations-heading {
+            font-size: 24px; /* Font size for heading */
+            font-weight: bold; /* Bold text */
+            color: #333333; /* Dark grey text color */
+            margin-bottom: 15px; /* Space below heading */
+        }
+
+        /* Styling for the destinations list */
+        .destinations-list {
+            list-style: disc; /* Use standard bullet points */
+            padding-left: 20px; /* Indent the list */
+            margin-bottom: 25px; /* Space below the list */
+        }
+
+        /* Styling for each list item in destinations */
+        .destinations-list li {
+            margin-bottom: 8px; /* Space between list items */
+        }
+
+        /* Styling for links in the destinations list */
+        .destinations-list a {
+            color: #2563eb; /* Blue link color */
+            text-decoration: none; /* Remove underline by default */
+        }
+
+        /* Underline links on hover */
+        .destinations-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for social media icons container */
+        .social-icons {
+            display: flex; /* Use flexbox to align icons */
+            justify-content: flex-end; /* Align icons to the right */
+            gap: 15px; /* Space between icons */
+        }
+
+        /* Styling for individual social media links */
+        .social-icons a {
+            color: #4a5568; /* Grey color for icons */
+            font-size: 24px; /* Size of the icons */
+            text-decoration: none; /* Remove underline */
+            transition: color 0.2s ease-in-out; /* Smooth color transition on hover */
+        }
+
+        /* Hover effect for social media icons */
+        .social-icons a:hover {
+            color: #007bff; /* Change color on hover (example blue) */
+        }
+        .navbar {
+            background-color: #1a1a1a; /* Dark background similar to the image */
+            overflow: hidden;
+            border-bottom: 2px solid #a07a4a; /* Bottom border to match the image's gold line */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: flex-start; /* Align items to the start */
+        }
+
+        .navbar li {
+            border-right: 1px yellow; /* Darker border for dividers */
+        }
+
+        /* Remove border from the last item */
+        .navbar li:last-child {
+            border-right: none;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        .navbar a:hover {
+            background-color: #333; /* Slightly lighter background on hover */
+            color: #ffcc00; /* Example hover color */
+        }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>one</li>
+            <ul>
+            <li>sub one</li>
+            <li>sub two</li>
+            </ul>
+            <li>two</li>
+            <ul>
+            <li>sub one</li>
+            <li>sub two</li>
+            </ul>           
+            <li>three</li>
+            <ul>
+            <li>sub one</li>
+            <li>sub two</li>
+            </ul>           
+        </ul>
+
+        <!--task-2-->
+        <h2>Vertical Navigational bar</h2>
+        <ul class="ul">
+        <li class="li"><a href="#home">Home</a></li>
+        <li class="li"><a href="#home">Java</a></li>
+        <li class="li"><a href="#home">HTML</a></li>
+        <li class="li"><a href="#home">CSS</a></li>
+        <li class="li"><a href="#home">Bootstrap</a></li>
+        </ul>
+        <!--task-3-->
+        <h2>Horizontal Navigational Bar</h2>
+        <ul class="uh">
+        <li class="lh"><a href="#home">Home</a></li>
+        <li class="lh"><a href="#home">Java</a></li>
+        <li class="lh"><a href="#home">HTML</a></li>
+        <li class="lh"><a href="#home">CSS</a></li>
+        <li class="lh"><a href="#home">Bootstrap</a></li>
+        </ul>
+        <!--task-4-->
+        <h2>Table</h2>
+        <table>
+            <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Andres</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbkop</td>
+                <td>Maria Andres</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbkop</td>
+                <td>Maria Andres</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbkop</td>
+                <td>Maria Andres</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbkop</td>
+                <td>Maria Andres</td>
+                <td>Germany</td>
+            </tr>
+        </table>
+        <!--task-5-->
+        <div class="menu-container">
+        <h2 class="menu-title">Menu Items</h2>
+        <ul class="menu-list">
+            <li class="menu-item">
+                <span class="star-icon">&#9733;</span> Hummus
+            </li>
+            <li class="menu-item">
+                <span class="star-icon">&#9733;</span> Pita
+            </li>
+            <li class="menu-item">
+                <span class="star-icon">&#9733;</span> Green salad
+            </li>
+            <li class="menu-item">
+                <span class="star-icon">&#9733;</span> Halloumi
+            </li>
+        </ul>
+    </div>
+    <!--task-6-->
+    <div class="news-container">
+        <div class="demo-banner">
+            <p class="banner-text">This is a demo image</p>
+        </div>
+
+        <h1 class="news-heading">FIFA World Cup 2014 News</h1>
+
+        <p class="news-paragraph">
+            The biggest sensation in the history of the FIFA World Cup qualifiers – and indeed in the history of international football – was recorded on 11 April 2001, when Australia beat American Samoa 31-0.
+        </p>
+        <p class="news-paragraph">
+            The legendary match also brought global renown for Archie Thompson, whose 13-goal haul set a new world record, which stands to this day, for an individual player in a single international match.
+            And though the defeat earned Americans bizarre ignominy, so inspiring has their subsequent recovery been that it is now the subject of an acclaimed documentary, 'Next Goal Wins', showing across the world.
+        </p>
+
+        <h2 class="destinations-heading">Destinations</h2>
+        <ul class="destinations-list">
+            <li><a href="#">Belo Horizonte Stadium</a></li>
+            <li><a href="#">Brasilia Stadium</a></li>
+            <li><a href="#">Cuiaba Stadium</a></li>
+            <li><a href="#">Curitiba Stadium</a></li>
+            <li><a href="#">Fortaleza Stadium</a></li>
+            <li><a href="#">Manaus Stadium</a></li>
+            <li><a href="#">Natal Stadium</a></li>
+            <li><a href="#">Porto Alegre Stadium</a></li>
+            <li><a href="#">Recife Stadium</a></li>
+            <li><a href="#">Rio de Janeiro Stadium</a></li>
+            <li><a href="#">Salvador Stadium</a></li>
+            <li><a href="#">Sao Paulo Stadium</a></li>
+        </ul>
+
+        <div class="social-icons">
+            <a href="#">RSS</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+    <!--task-7-->
+    <h2>Navigational Bar</h2>
+    <div class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#product">Product</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#users">Users</a></li>
+            <li><a href="#login">Login</a></li>
+        </ul>
+    </div>
+
+    </body>
+</html>
